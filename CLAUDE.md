@@ -48,3 +48,11 @@ launchctl unload ~/Library/LaunchAgents/com.nanoclaw.plist
 ## Container Build Cache
 
 The container buildkit caches the build context aggressively. `--no-cache` alone does NOT invalidate COPY steps — the builder's volume retains stale files. To force a truly clean rebuild, prune the builder then re-run `./container/build.sh`.
+
+## Development Workflow
+
+For ANY development task (features, bugs, refactoring), invoke `bet-toolkit:fullstack-developer` which enforces:
+
+1. **Research** → Fork subagent, persist to `docs/research/{id}.md`
+2. **Plan** → Create task file in `docs/tasks/`, get approval before implementing
+3. **Implement** → Incremental commits with Jira prefix
